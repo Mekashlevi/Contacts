@@ -34,7 +34,7 @@ tr:nth-child(odd) { /* Alternate odd rows */
   background-color: grey;
 }
 
-button, #message, input {
+button, #message, input, h1 {
   color: black;
 }
 
