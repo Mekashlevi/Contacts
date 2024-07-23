@@ -1,0 +1,40 @@
+/* Display a nicely styled list using HTML and CSS. */
+
+* {
+  color: white;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  text-align: center;
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: black;
+}
+
+tr:nth-child(even) { /* Alternate even rows */
+  background-color: #5c5c5c;
+}
+
+tr:nth-child(odd) { /* Alternate odd rows */
+  background-color: grey;
+}
+
+button, #message, input {
+  color: black;
+}
+

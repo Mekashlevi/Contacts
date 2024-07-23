@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Levi Mekash">
+    <meta name="viewport" content="width=device-width">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+
+    <h1>Contacts</h1>
+    <table id="contactsTable">
+        <thead>
+            <tr>
+                <th>Slot #</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+          <!-- JavaScript will populate this part -->
+        </tbody>
+    </table>
+     
+    <p id="message"></p>
+    <input type="number" id="slotInput" placeholder="Enter Slot Number">
+    <button id="searchButton">Search</button>
+    <br><br>
+    <button id="clearButton">Clear</button>
+
+    <script>
+        // Prompt the user to see the entire list with a charming invitation
+            alert('Click OK to view or browse the entire contact list!');
+      
+        // Define the slot numbers and contacts list (stored in an array)
+        const slots = [0, 1, 2, 3, 4, 5];
+        const contacts = ["Arnold", "Sly", "Dwayne", "Vin", "JCVD", "Steven"];
+
+        // Populate the table with contacts
+        const tableBody = document.querySelector('#contactsTable tbody');
+        for (let i = 0; i < slots.length; i++) {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${slots[i]}</td><td>${contacts[i]}</td>`;
+            tableBody.appendChild(row);
+        }
+
+        // Prompt the user to enter a slot number for the name they wish to see
+        document.getElementById('searchButton').onclick = function() {
+            const slotInput = document.getElementById('slotInput').value;
+            const messageElement = document.getElementById('message');
+            const index = slots.indexOf(parseInt(slotInput));
+            if (index !== -1) {
+                messageElement.textContent = `You selected ${contacts[index]}. Would you like to select another name?`; // Display the Contact name with the message "You selected name." & Using a charming invitation, ask the user if they wish to select another name.
+            } else {
+                messageElement.textContent = 'Name not found. Please try again.';
+            }
+        };
+
+      
+        // Clear the input field and message
+        document.getElementById('clearButton').onclick = function() {
+            document.getElementById('slotInput').value = '';
+            document.getElementById('message').textContent = '';
+        };      
+    </script>
+
+</body>
+
+</html>
